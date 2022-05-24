@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { Vector2, ShaderMaterial, PlaneGeometry } from 'three'
+	import { ShaderMaterial, PlaneGeometry } from 'three'
 	import { Mesh } from 'svelte-cubed'
 	import { browser } from '$app/env';
-import type { IUniform } from 'three';
+	import type { IUniform } from 'three';
 
 	async function getFile(filename: string): Promise<string> {
 		if (!browser || !filename) return ''
@@ -13,8 +13,6 @@ import type { IUniform } from 'three';
 	export let fragmentShaderPath: string
 
 	export let uniforms: { [uniform: string]: IUniform<any> } | undefined = undefined; 
-
-	export let interpolation: number = 0
 
 	$: fragmentShaderPromise = getFile(fragmentShaderPath)
 
