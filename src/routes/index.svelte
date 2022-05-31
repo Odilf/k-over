@@ -17,14 +17,11 @@ import { browser } from '$app/env';
 
 	let zoom = 0.2
 
-	// $: resolution = { value: new Vector2(
-	// 	Math.max(innerWidth, innerHeight) * zoom,
-	// 	Math.max(innerWidth, innerHeight) * zoom,
-	// )}
 	$: resolution = { value: new Vector2(
 		innerWidth * zoom,
 		innerHeight * zoom,
 	)}
+	
 	$: center = { value: new Vector2(0.5 / zoom, 0.5 / zoom) }
 
 	$: console.log({
