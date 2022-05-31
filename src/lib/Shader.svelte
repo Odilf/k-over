@@ -19,6 +19,12 @@
 	let time = 0.0
 
 	setInterval(() => time += 0.01, 10)
+
+	const vertexShader = `
+	void main()	{
+		gl_Position = vec4( position, 1.0 );
+	}
+	`
 	
 </script>
 
@@ -29,5 +35,6 @@
 		uniforms,
 
 		fragmentShader,
+		vertexShader,
 	})}/>
 {/await}
